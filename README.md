@@ -34,7 +34,7 @@ You may create new Users, or you may link other user directory like AD, etc. For
 
 ![image](https://user-images.githubusercontent.com/16347988/141109267-29a4abf4-9bdb-49c3-abf7-bb27caa23512.png)
 
-## Build and Run the Single Page Application
+## Download the code and update your client credentails (You may use the downloaded as well)
 
 Note: my code is modified a bit, make sure you use the code you downloaded.
 ~~~
@@ -53,7 +53,7 @@ To specify the application client ID and domain, make a copy of `auth_config.jso
   "clientId": "your client id"
 }
 ```
-
+## Build and Run the Single Page Application
 ~~~
 npm install && npm start
 ~~~
