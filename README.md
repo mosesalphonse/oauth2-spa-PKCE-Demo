@@ -37,5 +37,10 @@ You may create new Users, or you may link other user directory like AD, etc. For
 ## Build and Run the Single Page Application
 
 ~~~
-git clone 
+git clone https://github.com/mosesalphonse/oauth2-spa-PKCE-Demo.git
+
+cd oauth2-spa-PKCE-Demo
+~~~
+~~~
+npm install && npm start
 ~~~
