@@ -1,4 +1,4 @@
 {
-  "domain": "dev-fnxlwmcb.eu.auth0.com",
-  "clientId": "zbqemV7BJI8xgkWlDdgzWvgpVN6bMkjZ"
+  "domain": "your domain", #this needs to be updated
+  "clientId": "aaaaaaaabbbbbbbbbbcccccc" #this needs to be updated
 }
