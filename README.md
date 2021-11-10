@@ -63,3 +63,11 @@ Note: 'code_challenge' is nothing but, a random text's hash value using 'code_ch
 
 Here in this example, the code_challenge value is 'mAoSi0NclnylUPyf8KyVRsf0L4NZXGjzra2SrVizipw'. This hashed value will be stored in Authorization server(auth0) for future verification for this Client. This value should match with Code verification's hash value which we will pass later to authorization server(auth0). This verification step will be done by auth0, in this case.
 
+b) After successful Login
+
+![image](https://user-images.githubusercontent.com/16347988/141112942-bef851f6-8cab-41f0-bcfc-03af9b9513b8.png)
+
+b) While getting Access Token
+
+![image](https://user-images.githubusercontent.com/16347988/141113230-c2a1d82f-4bfe-4edd-999e-6d6983273de7.png)
+
