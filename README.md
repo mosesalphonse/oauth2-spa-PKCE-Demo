@@ -12,8 +12,8 @@ To specify the application client ID and domain, make a copy of `auth_config.jso
 
 ```json
 {
-  "domain": "dev-fnxlwmcb.eu.auth0.com",
-  "clientId": "94Ev6MdyeerucR2GpEnbih9nRRpJPvaT"
+  "domain": "your domain",
+  "clientId": "your client id"
 }
 ```
 
