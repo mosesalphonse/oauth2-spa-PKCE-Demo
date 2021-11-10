@@ -36,6 +36,7 @@ You may create new Users, or you may link other user directory like AD, etc. For
 
 ## Build and Run the Single Page Application
 
+Note: my code is modified a bit, make sure you use the code you downloaded.
 ~~~
 git clone https://github.com/mosesalphonse/oauth2-spa-PKCE-Demo.git
 
@@ -44,3 +45,21 @@ cd oauth2-spa-PKCE-Demo
 ~~~
 npm install && npm start
 ~~~
+
+## Verification
+
+Home Page
+
+![image](https://user-images.githubusercontent.com/16347988/141111122-c8fe1fcc-c758-406c-a99c-7ee2422e5e41.png)
+
+### After Clicking Login Button
+
+a) Invoking 'authorize' endpoint with 'code_challenge', refer the below screenshot.
+
+
+![image](https://user-images.githubusercontent.com/16347988/141112065-7ba94a6b-e016-47e4-9d31-c5b9bf2edcfd.png)
+
+Note: 'code_challenge' is nothing but, a random text's hash value using 'code_challenge_method'
+
+Here in this example, the code_challenge value is 'mAoSi0NclnylUPyf8KyVRsf0L4NZXGjzra2SrVizipw'. This hashed value will be stored in Authorization server(auth0) for future verification for this Client. This value should match with Code verification's hash value which we will pass later to authorization server(auth0). This verification step will be done by auth0, in this case.
+
