@@ -1,81 +1,68 @@
-# oauth2-spa-PKCE-Demo
-Single Page Application and its Security with Oauth2 Authorization Code Flow with Proof Key for Code Exchange (PKCE)
+# Sample 01 - Login
 
-## Background
-In Single Page App or Mobile App, we use Oauth 2.0's authorization code grant type for security. In Authorization code grant type,  first call (authorization request) is made through a browser or User-Agent to obtain the authorization code. This makes the auth code vulnerable to an “Authorization Code Interception Attack”. In simple terms, there is a chance someone could steal that auth code.
+The purpose of this article is to demonstrate how simple it is to set up and use the new Single Page Application SDK, and authenticate a user in your application using Auth0's Universal Login Page.
 
-And Also Front Channel(SPA) is not safe to store any credentals like client secret, So they use Implicit Flow.
+## Running the Sample Application
 
-For native and browser-based JavaScript apps, it is now widely considered a best practice to use the Authorization Code flow with the PKCE extension, instead of the Implicit flow.
+The sample can be run locally, by cloning the repository to your machine and then following the steps below.
 
-This flow is like the regular Authorization Code flow, except PKCE replaces the client secret used in the standard Authorization Code flow with a one-time code challenge. This means the client app doesn’t have to store a client secret.
+### Specifying Auth0 Credentials
 
-## Authorization Server, Client App cinfig (used Auth0)
+To specify the application client ID and domain, make a copy of `auth_config.json.example` and rename it to `auth_config.json`. Then open it in a text editor and supply the values for your application:
 
-Step 1: Setup your Auth0 tenancy and login into that
+```json
+{
+  "domain": "dev-fnxlwmcb.eu.auth0.com",
+  "clientId": "94Ev6MdyeerucR2GpEnbih9nRRpJPvaT"
+}
+```
 
-Step 2: Create Single Page Application client as shown in the below screenshot
+### Installation
 
-![image](https://user-images.githubusercontent.com/16347988/141107689-b4f55820-0d7d-4c65-b350-07add79c0303.png)
+After cloning the repository, run:
 
+```bash
+$ npm install
+```
 
-Step 3: Go to the new created Single Page Application under 'settings' and configure your Callback URL, Logout URL and Allowed Web origins as shown in the below screenshot
+This will install all of the necessary packages in order for the sample to run.
 
-![image](https://user-images.githubusercontent.com/16347988/141108374-0ce78ef4-15d1-4b2b-8cc1-cadca68a79f6.png)
+### Running the Application
 
-Step 4: Download the sample JavaScript Code, can be found under 'Quick start' as shown in the screenshot
+This version of the application uses an [Express](https://expressjs.com) server that can serve the site from a single page. To start the app from the terminal, run:
 
-![image](https://user-images.githubusercontent.com/16347988/141108760-0a619664-7452-4c1f-a92f-4712bcf7979f.png)
+```bash
+$ npm run dev
+```
 
+## Frequently Asked Questions
 
-## Setup User accounts
+We are compiling a list of questions and answers regarding the new JavaScript SDK - if you're having issues running the sample applications, [check the FAQ](https://github.com/auth0/auth0-spa-js/blob/master/FAQ.md)!
 
-You may create new Users, or you may link other user directory like AD, etc. For this example, I have created users within Auth0's database.
+## What is Auth0?
 
-![image](https://user-images.githubusercontent.com/16347988/141109267-29a4abf4-9bdb-49c3-abf7-bb27caa23512.png)
+Auth0 helps you to:
 
-## Build and Run the Single Page Application
+- Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, among others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
+- Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
+- Add support for **[linking different user accounts](https://docs.auth0.com/link-accounts)** with the same user.
+- Support for generating signed [Json Web Tokens](https://docs.auth0.com/jwt) to call your APIs and **flow the user identity** securely.
+- Analytics of how, when and where users are logging in.
+- Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.auth0.com/rules).
 
-Note: my code is modified a bit, make sure you use the code you downloaded.
-~~~
-git clone https://github.com/mosesalphonse/oauth2-spa-PKCE-Demo.git
+## Create a free Auth0 account
 
-cd oauth2-spa-PKCE-Demo
-~~~
-~~~
-npm install && npm start
-~~~
+1. Go to [Auth0](https://auth0.com/signup) and click Sign Up.
+2. Use Google, GitHub or Microsoft Account to login.
 
-## Verification
+## Issue Reporting
 
-Home Page
+If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
 
-![image](https://user-images.githubusercontent.com/16347988/141111122-c8fe1fcc-c758-406c-a99c-7ee2422e5e41.png)
+## Author
 
-### After Clicking Login Button
+[Auth0](auth0.com)
 
-a) Invoking 'authorize' endpoint with 'code_challenge', refer the below screenshot.
+## License
 
-
-![image](https://user-images.githubusercontent.com/16347988/141112065-7ba94a6b-e016-47e4-9d31-c5b9bf2edcfd.png)
-
-Note: 'code_challenge' is nothing but, a random text's hash value using 'code_challenge_method'
-
-Here in this example, the code_challenge value is 'mAoSi0NclnylUPyf8KyVRsf0L4NZXGjzra2SrVizipw'. This hashed value will be stored in Authorization server(auth0) for future verification for this Client. This value should match with Code verification's hash value which we will pass later to authorization server(auth0). This verification step will be done by auth0, in this case.
-
-b) After successful Login
-
-![image](https://user-images.githubusercontent.com/16347988/141112942-bef851f6-8cab-41f0-bcfc-03af9b9513b8.png)
-
-b) While getting Access Token
-
-![image](https://user-images.githubusercontent.com/16347988/141113230-c2a1d82f-4bfe-4edd-999e-6d6983273de7.png)
-
-Note: the code_verifier is 'VRH7Ncitq.dQE5baR6tOT.ld35TglhHv9Dj~ea~B9hX'
-
-Use the below tool to hash the above code_verifier, the hashed value is 'mAoSi0NclnylUPyf8KyVRsf0L4NZXGjzra2SrVizipw', this value should match with Code_challenge which we initially passed while accessing 'authorize' endpoint. This step will be done by the authorization server(auth0)
-
-https://tonyxu-io.github.io/pkce-generator/
-
-
-
+This project is licensed under the MIT license. See the [LICENSE](LICENSE.txt) file for more info.
