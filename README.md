@@ -71,3 +71,11 @@ b) While getting Access Token
 
 ![image](https://user-images.githubusercontent.com/16347988/141113230-c2a1d82f-4bfe-4edd-999e-6d6983273de7.png)
 
+Note: the code_verifier is 'VRH7Ncitq.dQE5baR6tOT.ld35TglhHv9Dj~ea~B9hX'
+
+Use the below tool to hash the above code_verifier, the hashed value is 'mAoSi0NclnylUPyf8KyVRsf0L4NZXGjzra2SrVizipw', this value should match with Code_challenge which we initially passed while accessing 'authorize' endpoint. This step will be done by the authorization server(auth0)
+
+https://tonyxu-io.github.io/pkce-generator/
+
+
+
