@@ -10,6 +10,11 @@ For native and browser-based JavaScript apps, it is now widely considered a best
 
 This flow is like the regular Authorization Code flow, except PKCE replaces the client secret used in the standard Authorization Code flow with a one-time code challenge. This means the client app doesn’t have to store a client secret.
 
+## Oauth 2.0 : Authorization Code Flow with PCKE
+
+![image](https://user-images.githubusercontent.com/16347988/141119772-711b1609-d512-4c7c-9313-fa1505ae235d.png)
+
+
 ## Authorization Server, Client App cinfig (used Auth0)
 
 Step 1: Setup your Auth0 tenancy and login into that
