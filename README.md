@@ -27,3 +27,15 @@ Step 4: Download the sample JavaScript Code, can be found under 'Quick start' as
 
 ![image](https://user-images.githubusercontent.com/16347988/141108760-0a619664-7452-4c1f-a92f-4712bcf7979f.png)
 
+
+## Setup User accounts
+
+You may create new Users, or you may link other user directory like AD, etc. For this example, I have created users within Auth0's database.
+
+![image](https://user-images.githubusercontent.com/16347988/141109267-29a4abf4-9bdb-49c3-abf7-bb27caa23512.png)
+
+## Build and Run the Single Page Application
+
+~~~
+git clone 
+~~~
