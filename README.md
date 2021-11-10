@@ -42,6 +42,18 @@ git clone https://github.com/mosesalphonse/oauth2-spa-PKCE-Demo.git
 
 cd oauth2-spa-PKCE-Demo
 ~~~
+
+### Specifying Auth0 Credentials
+
+To specify the application client ID and domain, make a copy of `auth_config.json.example` and rename it to `auth_config.json`. Then open it in a text editor and supply the values for your application:
+
+```json
+{
+  "domain": "your domain",
+  "clientId": "your client id"
+}
+```
+
 ~~~
 npm install && npm start
 ~~~
